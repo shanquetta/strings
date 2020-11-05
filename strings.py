@@ -15,7 +15,7 @@ Kenzie assignment: Strings!
 
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = "???"
+__author__ = "Shanquetta Pelzer, Kano help, realpython.com, Workshop, stackoverflow.com, LinkedIn Learning"
 
 # A. donuts
 # Given an int count of a number of donuts, return a string
@@ -29,7 +29,13 @@ __author__ = "???"
 
 def donuts(count):
     # your code here
-    return
+    print("#1 (Donuts) Enter a number: ")
+    num = int(input())
+    if num < 10:
+        print('Number of donuts: ', num)
+    elif num > 10:
+        print('Number of donuts: many')
+donuts(input)
 
 
 # B. both_ends
@@ -43,7 +49,18 @@ def donuts(count):
 
 def both_ends(s):
     # your code here
-    return
+    print("#2 (Both_Ends) Enter a word: ")
+    str = input()
+
+    # Remove middle characters
+    # Use slice + concatenation
+    if len(str) < 2:
+        print(" ")
+    elif len(str) > 2:
+        print(str[:2] + str[-2:])
+both_ends(str)
+
+
 
 
 # C. fix_start
@@ -59,7 +76,13 @@ def both_ends(s):
 
 def fix_start(s):
     # your code here
-    return
+    print("#3 (Fix_Start) Enter a word: ")
+    str = input()
+    
+    first_character = str[:1]
+    x = str.replace(first_character, '*').replace('*', first_character, 1)
+    print(x)
+fix_start(str)
 
 
 # D. mix_up
@@ -74,7 +97,18 @@ def fix_start(s):
 
 def mix_up(a, b):
     # your code here
-    return
+    a = input("#4 (Mix_Up) Enter value 1: ")
+    b = input("#4 (Mix_Up) Enter value 2: ")
+
+    x = b[:2] + a[2:]
+    y = a[:2] + b[2:]
+ 
+    print(x, y)
+    return a, b
+    
+mix_up(input, input)
+
+
 
 
 # E. verbing
@@ -87,7 +121,15 @@ def mix_up(a, b):
 
 def verbing(s):
     # your code here
-    return
+    print("#5 (Verbing) Enter a string: ")
+    str = input()
+
+    if len(str) >= 3 and not str.endswith('ing'):
+        print(str + 'ing')
+    elif str.endswith('ing'):
+        print(str + 'ly')
+        return str
+verbing(str)
 
 
 # F. not_bad
@@ -100,8 +142,16 @@ def verbing(s):
 
 
 def not_bad(s):
-    # your code here
-    return
+
+  print("#6 (Not_Bad) Enter a string: ")
+  str = input()
+
+  x = str.find("not")
+  y = str.find("bad")
+  str = str.replace(str[x:y+3], 'good')
+  print(str)
+  return str
+not_bad(str)
 
 
 # G. front_back
@@ -116,4 +166,15 @@ def not_bad(s):
 
 def front_back(a, b):
     # your code here
-    return
+    print("#7 (Front_Back) Enter first word: ")
+    str_a = input()
+    print("Enter second word: ")
+    str_b = input()
+    
+    a_front = str_a[0:len(str_a) // 2 if len(str_a)%2 == 0 else ((len(str_a) // 2)+1):]
+    a_back = str_a[len(str_a) // 2 if len(str_a)%2 == 0 else ((len(str_a) // 2)+1):] 
+    b_front = str_b[0:len(str_b) // 2]
+    b_back = str_b[len(str_b) // 2 if len(str_b)%2 == 0 else ((len(str_b) // 2)+1):]
+    print(a_front+b_front+a_back+b_back)
+    return a_front + b_front + a_back + b_back
+front_back(input, input)
